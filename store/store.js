@@ -20,6 +20,8 @@ Vue.use(Vuex)
 
 const state = {
     count: 0,
+    myorder: [],
+    istotal: 0,
 
     cart: [],
     isLoggedIn: !!localStorage.getItem("token"),

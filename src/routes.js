@@ -6,9 +6,6 @@ import products from './components/products.vue'
 import Cart from './components/Cart.vue';
 import reset from './reset.vue'
 
-
-
-
 export const routes = [{
         path: '/signup',
         component: signup
@@ -17,8 +14,6 @@ export const routes = [{
         path: '/login',
         component: login,
         name: 'login',
-
-
     },
     {
         path: '/',
@@ -71,7 +66,7 @@ export const routes = [{
     {
         path: '/products',
         component: products,
-        name: 'product1',
+        name: 'page1',
         query: {
             page: 1
         }
@@ -79,7 +74,7 @@ export const routes = [{
     {
         path: '/products',
         component: products,
-        name: 'product2',
+        name: 'page2',
         query: {
             page: 2
         }
@@ -87,7 +82,7 @@ export const routes = [{
     {
         path: '/products',
         component: products,
-        name: 'product3',
+        name: 'page3',
         query: {
             page: 3
         }
@@ -95,7 +90,7 @@ export const routes = [{
     {
         path: '/products',
         component: products,
-        name: 'product4',
+        name: 'page4',
         query: {
             page: 4
         }
@@ -109,5 +104,6 @@ export const routes = [{
         path: '/reset',
         component: reset
     },
+
 
 ]

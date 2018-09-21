@@ -1,112 +1,121 @@
 <template>
-<div class="container">
-	  <div v-if="this.$route.query.product=='kurti'">	
-          <h1 class="title">Kurti</h1>
-             <p>{{kurticount}} products</p>
-             <table class="table is-striped">
-	           <thead>
-             <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Description</th>
-             </tr>
-             </thead>
-		         <tbody>
-             <tr v-for="product in kurti" :key="product">
-	                   <td><img :src='product.src' class="thumbnail" height="100" width="100"></td>
-	                   <td>{{product.price}}</td>
-                     <td></td>
-	                   <td><button @click='add(products)' class='button is-info'>Add to cart</button></td>
-	           </tr>
-	           </tbody>
-	           </table>
-	  </div>
-    <div v-if="this.$route.query.product=='shirt'">
-	       <h1 class="title">Shirt</h1>
-            <p>{{shirtcount}} products</p>
-            <table class="table is-striped">
-	          <thead>
-            <tr>
-                 <th>Product</th>
-                 <th>Price</th>
-                 <th>Description</th>
-            </tr>
-            </thead>
-		        <tbody>
-            <tr v-for="product in shirts" :key="product">
-	                <td><img :src='product.src' class="thumbnail" height="100" width="100"></td>
-	                <td>{{product.price}}</td>
-                  <td></td>
-	                <td><button @click='add(products)' class='button is-info'>Add to cart</button></td>
-	          </tr>
-	          </tbody>
-	          </table>
-	  </div>
-    <div v-if="this.$route.query.product=='top'">
-	       <h1 class="title">Top</h1>
-           <p>{{topcount}} products</p>
-           <table class="table is-striped">
-	         <thead>
-           <tr>
-           <th>Product</th>
-           <th>Price</th>
-           <th>Description</th>
-           </tr>
-           </thead>
-		       <tbody>
-           <tr v-for="product in top" :key="product">
-	               <td><img :src='product.src' class="thumbnail" height="100" width="100"></td>
-	               <td>{{product.price}}</td>
-                 <td></td>
-								 <td><button @click='add(products)' class='button is-info'>Add to cart</button></td>
-								 </tr>
-								 </tbody>
-								 </table>
-	  </div>
-    <div v-if="this.$route.query.product=='jeans'">
-	        <h1 class="title">Top</h1>
-          <p>{{jeanscount}} products</p>
-          <table class="table is-striped">
-	        <thead>
+  <div class="container">
+    <div v-if="this.$route.query.product=='kurti'">
+      <h1 class="title">Kurti</h1>
+      <p>{{kurticount}} products</p>
+      <table class="table is-striped">
+        <thead>
           <tr>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Description</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th></th>
           </tr>
-          </thead>
-		      <tbody>
-          <tr v-for="product in jeans" :key="product">
-	        <td><img :src='product.src' class="thumbnail" height="100" width="100"></td>
-	        <td>{{product.price}}</td>
-          <td></td>
-	        <td><button @click='add(products)' class='button is-info'>Add to cart</button></td>
-	        </tr>
-	        </tbody>
-	        </table>
-	  </div>
-     <div v-if="this.$route.query.product=='all'">
-	        <h1 class="title">products</h1>
-          <p>{{length}} products</p>
-          <table class="table is-striped">
-	        <thead>
-          <tr>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Description</th>
-          </tr>
-          </thead>
-    <tbody>
+        </thead>
+        <tbody>
+          <tr v-for="(product,index) in kurti" :key="index">
+            <td><img :src='product.src' class="thumbnail" height="100" width="100"></td>
+            <td>{{product.price}}</td>
+            <td></td>
+            <td><button @click='add(products)' class='button is-info'>Add to cart</button></td>
 
-<tr v-for="products in product" :key="products">
-<td><img :src='products.src' class="thumbnail" height="100" width="100"></td>
-<td>{{products.price}}</td>
-<td></td>
-<td><button @click='add(products)' class='button is-info'>Add to cart</button></td>
-</tr>
-</tbody>
-</table>
-	  </div>
-</div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div v-if="this.$route.query.product=='shirt'">
+      <h1 class="title">Shirt</h1>
+      <p>{{shirtcount}} products</p>
+      <table class="table is-striped">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(product,index) in shirts" :key="index">
+            <td><img :src='product.src' class="thumbnail" height="100" width="100"></td>
+            <td>{{product.price}}</td>
+            <td></td>
+            <td><button @click='add(products)' class='button is-info'>Add to cart</button></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div v-if="this.$route.query.product=='top'">
+      <h1 class="title">Top</h1>
+      <p>{{topcount}} products</p>
+      <table class="table is-striped">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(product,index) in top" :key="index">
+            <td><img :src='product.src' class="thumbnail" height="100" width="100"></td>
+            <td>{{product.price}}</td>
+            <td></td>
+            <td><button @click='add(products)' class='button is-info'>Add to cart</button></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div v-if="this.$route.query.product=='jeans'">
+      <h1 class="title">Jeans</h1>
+      <p>{{jeanscount}} products</p>
+      <table class="table is-striped">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(product,index) in jeans" :key="index">
+            <td><img :src='product.src' class="thumbnail" height="100" width="100"></td>
+            <td>{{product.price}}</td>
+            <td></td>
+            <td><button @click='add(products)' class='button is-info'>Add to cart</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div v-if="this.$route.query.product=='all'">
+      <h1 class="title">products</h1>
+      <p>{{length}} products</p>
+      <table class="table is-striped">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr v-for="(products,index) in product" :key="index">
+            <td><img :src='products.src' class="thumbnail" height="100" width="100"></td>
+            <td>{{products.price}}</td>
+            <td></td>
+            <td><button @click='add(products)' class='button is-info'>Add to cart</button></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </template>
 <script>
 import { mapGetters, mapActions } from "vuex";
@@ -148,6 +157,7 @@ export default {
 .container {
   margin-top: 60px;
 }
+
 .thumbnail:hover {
   position: relative;
   top: -25px;

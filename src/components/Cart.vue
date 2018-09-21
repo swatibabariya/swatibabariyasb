@@ -13,7 +13,7 @@
           <td>Price</td>
           <td>Quantity</td>
           <td>Update</td>
-          
+
           <td>Remove</td>
         </tr>
       </thead>
@@ -23,8 +23,8 @@
           <td>{{ p.price}}</td>
           <td>{{ p.quantity }}</td>
           <td><button @click="dec(index)">-</button>
-          <button @click="inc(index)">+</button></td>
-         <td><button @click='removeFromCart(index)'> <span class="glyphicon glyphicon-remove"></span></button></td>
+            <button @click="inc(index)">+</button></td>
+          <td><button @click='removeFromCart(index)'> <span class="glyphicon glyphicon-remove"></span></button></td>
         </tr>
         <tr>
           <td><b>Total:</b></td>
@@ -60,6 +60,7 @@ export default {
     },
     checkout() {
       alert("Pay us " + this.total);
+      this.$store.state.cart = [];
     },
     dec(index) {
       this.$store.state.cart[index].quantity--;

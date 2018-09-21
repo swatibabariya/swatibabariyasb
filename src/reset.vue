@@ -1,17 +1,17 @@
 <template>
-<div class="container">
-  <div class="form-group">
-   <div class=input><label for="email">Email:</label><input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" :class="{ error: $v.email.$error }"  v-model.trim="email"
-        id="email" 
-    @input="$v.email.$touch()"/>
+  <div class="container">
+    <div class="form-group">
+      <div class=input><label for="email">Email:</label><input type="text" class="form-control" name="username"
+          placeholder="Email Address" required="" autofocus="" :class="{ error: $v.email.$error }" v-model.trim="email"
+          id="email" @input="$v.email.$touch()" />
         <div v-if="$v.email.$dirty">
-    <p class="error-message" v-if="!$v.email.required">Email must not be empty.</p>
+          <p class="error-message" v-if="!$v.email.required">Email must not be empty.</p>
         </div>
-     <br/>
-     
-    <button @click='submit' class="btn btn-info btn-sm" :disabled="$v.$invalid" type="submit" >sendlink</button>
-  </div>
-  </div>
+        <br />
+
+        <button @click='submit' class="btn btn-info btn-sm" :disabled="$v.$invalid" type="submit">sendlink</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -55,16 +55,20 @@ export default {
 .input {
   padding: 5px;
 }
+
 input:focus {
   outline: none;
 }
+
 .error {
   border: 1px solid red;
 }
+
 .form-group {
   width: 500px;
   margin: auto;
 }
+
 .container {
   margin-top: 80px;
 }

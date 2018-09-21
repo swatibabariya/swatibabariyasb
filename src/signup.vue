@@ -13,15 +13,14 @@
         </div>
 
       </div>
-     
-        <label for="password">Password</label>
-        <vue-password  required="" 
-          v-model.trim="password" class="input"  @input="$v.password.$touch()"></vue-password>
-        <div v-if="$v.password.$dirty">
-          <p class="error-message" v-if="!$v.password.required">Password must not be empty.</p>
-          <p class="error-message" v-if="!$v.password.minLength">Password length must be 6</p>
-        </div>
-     
+
+      <label for="password">Password</label>
+      <vue-password required="" v-model.trim="password" class="input" @input="$v.password.$touch()"></vue-password>
+      <div v-if="$v.password.$dirty">
+        <p class="error-message" v-if="!$v.password.required">Password must not be empty.</p>
+        <p class="error-message" v-if="!$v.password.minLength">Password length must be 6</p>
+      </div>
+
       <div class="input">
         <label for="repeatPassword">Repeat Password</label>
         <input :class="{ error: $v.repeatPassword.$error }" type="password" class="form-control" id="repeatPassword"
@@ -132,9 +131,11 @@ input:focus {
 .error {
   border: 1px solid red;
 }
+
 .wrapper {
   margin-top: 80px;
 }
+
 .form-signin {
   width: 500px;
   margin: auto;
